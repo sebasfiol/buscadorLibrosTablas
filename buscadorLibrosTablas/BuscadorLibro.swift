@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class BuscadorLibro: UIViewController {
     @IBOutlet weak var numeroISBN: UITextField!
     @IBOutlet weak var tituloLibro: UILabel!
     @IBOutlet weak var autores: UITextView!
     @IBOutlet weak var portadaLibro: UIImageView!
+    
+    var contexto : NSManagedObjectContext? = nil
 
     @IBAction func buscarLibro(sender: AnyObject) {
+        var urlPortada : String = ""
         self.tituloLibro.text = ""
         self.autores.text = ""
         self.portadaLibro.image = nil
@@ -44,8 +48,23 @@ class BuscadorLibro: UIViewController {
                     }
                 }
                 if let dico4 = dico2["cover"] as? NSDictionary {
-                    let dico5 = dico4["medium"] as! NSString as String
-                    cargarImagen(dico5)
+                    urlPortada = dico4["medium"] as! NSString as String
+                    cargarImagen(urlPortada)
+                }
+                let nuevoLibro = NSEntityDescription.insertNewObjectForEntityForName("Libro", inManagedObjectContext: self.contexto!)
+                nuevoLibro.setValue(numeroISBN, forKey: "ISBN")
+                nuevoLibro.setValue(tituloLibro, forKey: "titulo")
+                nuevoLibro.setValue(autores, forKey: "autores")
+                nuevoLibro.setValue(urlPortada, forKey: "portada")
+                do {
+                    try self.contexto?.save()
+                }
+                catch {
+                    let alertController = UIAlertController(title: "Error", message:"Se ha producido un error en la aplicación.", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
             }
             catch _ {
@@ -72,6 +91,7 @@ class BuscadorLibro: UIViewController {
         self.tituloLibro.text = ""
         self.autores.text = ""
         self.portadaLibro.image = nil
+        self.contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         // Do any additional setup after loading the view.
     }
 
