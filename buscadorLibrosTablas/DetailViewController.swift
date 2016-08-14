@@ -45,7 +45,9 @@ class DetailViewController: UIViewController {
         let url = NSURL(string: urlString)
         let datos = NSData(contentsOfURL: url!)
         if datos != nil {
-            self.portada.image = UIImage(data: datos!)
+            if let imagenPortada = self.portada {
+                imagenPortada.image = UIImage(data: datos!)
+            }
         }
         
     }
