@@ -33,25 +33,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="276" width="280" height="17"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8D4-8l-c3Q">
+                                <rect key="frame" x="20" y="72" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnr-27-vSe">
+                                <rect key="frame" x="20" y="101" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor/es:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZI-rx-CUa">
+                                <rect key="frame" x="20" y="130" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nGP-Iy-AkJ">
+                                <rect key="frame" x="20" y="159" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ddk-vZ-b3t"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ji-3j-x1Y">
+                                <rect key="frame" x="20" y="295" width="240" height="253"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
+                            <constraint firstItem="nGP-Iy-AkJ" firstAttribute="leading" secondItem="8D4-8l-c3Q" secondAttribute="leading" id="1J1-nO-vIJ"/>
+                            <constraint firstItem="8D4-8l-c3Q" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="4" id="3ey-VV-e2d"/>
+                            <constraint firstItem="3Ji-3j-x1Y" firstAttribute="leading" secondItem="8D4-8l-c3Q" secondAttribute="leading" id="3lt-g1-NrF"/>
+                            <constraint firstItem="qZI-rx-CUa" firstAttribute="top" secondItem="mnr-27-vSe" secondAttribute="bottom" constant="8" symbolic="YES" id="81i-lQ-E3B"/>
+                            <constraint firstItem="nGP-Iy-AkJ" firstAttribute="top" secondItem="qZI-rx-CUa" secondAttribute="bottom" constant="8" symbolic="YES" id="8JU-Av-OE1"/>
+                            <constraint firstItem="qZI-rx-CUa" firstAttribute="leading" secondItem="8D4-8l-c3Q" secondAttribute="leading" id="HKg-ET-9mr"/>
+                            <constraint firstItem="mnr-27-vSe" firstAttribute="top" secondItem="8D4-8l-c3Q" secondAttribute="bottom" constant="8" symbolic="YES" id="Jju-Gp-cmn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nGP-Iy-AkJ" secondAttribute="trailing" constant="44" id="OK1-74-yS2"/>
+                            <constraint firstItem="nGP-Iy-AkJ" firstAttribute="trailing" secondItem="3Ji-3j-x1Y" secondAttribute="trailing" id="Rpz-Zj-vtn"/>
+                            <constraint firstItem="mnr-27-vSe" firstAttribute="leading" secondItem="8D4-8l-c3Q" secondAttribute="leading" id="UMe-wC-xWJ"/>
+                            <constraint firstItem="8D4-8l-c3Q" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" symbolic="YES" id="ddn-eR-esN"/>
+                            <constraint firstItem="3Ji-3j-x1Y" firstAttribute="top" secondItem="nGP-Iy-AkJ" secondAttribute="bottom" constant="8" symbolic="YES" id="fMT-ag-Wgj"/>
+                            <constraint firstAttribute="bottom" secondItem="3Ji-3j-x1Y" secondAttribute="bottom" constant="20" symbolic="YES" id="obE-97-MPT"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Libro" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="autores" destination="nGP-Iy-AkJ" id="UDG-tP-RGx"/>
+                        <outlet property="portada" destination="3Ji-3j-x1Y" id="jYL-yX-qzY"/>
+                        <outlet property="titulo" destination="mnr-27-vSe" id="oMg-3q-ryq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -76,10 +112,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8o-0L-ysM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="H8o-0L-ysM">
                                 <rect key="frame" x="33" y="101" width="255" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search"/>
                                 <connections>
                                     <action selector="buscarLibro:" destination="YsT-2O-ZMh" eventType="primaryActionTriggered" id="V4k-H6-mug"/>
                                 </connections>
@@ -148,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOz-tN-kNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482" y="-630"/>
+            <point key="canvasLocation" x="497" y="-630"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">

@@ -10,8 +10,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+    @IBOutlet weak var titulo: UILabel!
+    @IBOutlet weak var autores: UITextView!
+    @IBOutlet weak var portada: UIImageView!
 
     var detailItem: AnyObject? {
         didSet {
@@ -23,10 +24,30 @@ class DetailViewController: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.valueForKey("timeStamp")!.description
+            if let labelTitulo = self.titulo {
+                labelTitulo.text = detail.valueForKey("titulo")!.description
             }
+            if let textAutores = self.autores {
+                textAutores.text = detail.valueForKey("autores")!.description
+            }
+            cargarImagen(detail.valueForKey("portada")!.description)
         }
+        /*
+        if let detail = self.detailItem {
+            if let label = self.detailDescriptionLabel {
+                label.text = detail.valueForKey("titulo")!.description
+            }
+        }*/
+    }
+    
+    func cargarImagen(urlString:String)
+    {
+        let url = NSURL(string: urlString)
+        let datos = NSData(contentsOfURL: url!)
+        if datos != nil {
+            self.portada.image = UIImage(data: datos!)
+        }
+        
     }
 
     override func viewDidLoad() {

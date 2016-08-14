@@ -19,6 +19,7 @@ class BuscadorLibro: UIViewController {
 
     @IBAction func buscarLibro(sender: AnyObject) {
         var urlPortada : String = ""
+        var autores : String = ""
         self.tituloLibro.text = ""
         self.autores.text = ""
         self.portadaLibro.image = nil
@@ -39,7 +40,8 @@ class BuscadorLibro: UIViewController {
                 let json = try NSJSONSerialization.JSONObjectWithData(datos!, options: NSJSONReadingOptions.MutableLeaves)
                 let dico1 = json as! NSDictionary
                 let dico2 = dico1["ISBN:"+isbn] as! NSDictionary
-                self.tituloLibro.text = dico2["title"] as! NSString as String
+                let titulo = dico2["title"] as! NSString as String
+                self.tituloLibro.text = titulo
                 if let dico3 = dico2["authors"] as? [[String: AnyObject]] {
                     for autor in dico3 {
                         if let name = autor["name"] as? String {
@@ -47,13 +49,14 @@ class BuscadorLibro: UIViewController {
                         }
                     }
                 }
+                autores = self.autores.text
                 if let dico4 = dico2["cover"] as? NSDictionary {
                     urlPortada = dico4["medium"] as! NSString as String
                     cargarImagen(urlPortada)
                 }
-                let nuevoLibro = NSEntityDescription.insertNewObjectForEntityForName("Libro", inManagedObjectContext: self.contexto!)
-                nuevoLibro.setValue(numeroISBN, forKey: "ISBN")
-                nuevoLibro.setValue(tituloLibro, forKey: "titulo")
+                let nuevoLibro = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.contexto!)
+                nuevoLibro.setValue(isbn, forKey: "isbn")
+                nuevoLibro.setValue(titulo, forKey: "titulo")
                 nuevoLibro.setValue(autores, forKey: "autores")
                 nuevoLibro.setValue(urlPortada, forKey: "portada")
                 do {
