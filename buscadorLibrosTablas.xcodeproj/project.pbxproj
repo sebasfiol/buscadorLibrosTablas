@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C47131D41D60815E00AD1510 /* libro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C47131D31D60815E00AD1510 /* libro.jpg */; };
 		C48AA2401D5DAF8E00878CCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AA23F1D5DAF8E00878CCA /* AppDelegate.swift */; };
 		C48AA2431D5DAF8E00878CCA /* buscadorLibrosTablas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C48AA2411D5DAF8E00878CCA /* buscadorLibrosTablas.xcdatamodeld */; };
 		C48AA2451D5DAF8E00878CCA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AA2441D5DAF8E00878CCA /* MasterViewController.swift */; };
@@ -16,11 +15,11 @@
 		C48AA24C1D5DAF8E00878CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48AA24B1D5DAF8E00878CCA /* Assets.xcassets */; };
 		C48AA24F1D5DAF8E00878CCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48AA24D1D5DAF8E00878CCA /* LaunchScreen.storyboard */; };
 		C48AA2571D5DBFD600878CCA /* BuscadorLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48AA2561D5DBFD600878CCA /* BuscadorLibro.swift */; };
+		C49996861D6B934B004786BC /* libro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C49996851D6B934B004786BC /* libro.jpg */; };
 		C49CF3C31D5F03E000C12477 /* Libro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49CF3C21D5F03E000C12477 /* Libro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C47131D31D60815E00AD1510 /* libro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = libro.jpg; path = ../../../../../Users/sebasfiol/Downloads/libro.jpg; sourceTree = "<group>"; };
 		C48AA23C1D5DAF8E00878CCA /* buscadorLibrosTablas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buscadorLibrosTablas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48AA23F1D5DAF8E00878CCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C48AA2421D5DAF8E00878CCA /* buscadorLibrosTablas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = buscadorLibrosTablas.xcdatamodel; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 		C48AA24E1D5DAF8E00878CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C48AA2501D5DAF8E00878CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C48AA2561D5DBFD600878CCA /* BuscadorLibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscadorLibro.swift; sourceTree = "<group>"; };
+		C49996851D6B934B004786BC /* libro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = libro.jpg; sourceTree = "<group>"; };
 		C49CF3C21D5F03E000C12477 /* Libro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Libro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +48,7 @@
 		C47131D21D60812E00AD1510 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				C47131D31D60815E00AD1510 /* libro.jpg */,
+				C49996851D6B934B004786BC /* libro.jpg */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C47131D41D60815E00AD1510 /* libro.jpg in Resources */,
+				C49996861D6B934B004786BC /* libro.jpg in Resources */,
 				C48AA24F1D5DAF8E00878CCA /* LaunchScreen.storyboard in Resources */,
 				C48AA24C1D5DAF8E00878CCA /* Assets.xcassets in Resources */,
 				C48AA24A1D5DAF8E00878CCA /* Main.storyboard in Resources */,
